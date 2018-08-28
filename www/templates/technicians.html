@@ -5,7 +5,7 @@
         <td></td>
     </tr>
     <tr ng-repeat="technician in technicians">
-        <td>{{technician.tech_name}}</td>
+        <td>{{technician.tech_name}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{technician.lic_number}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{technician.expire_date}}</td>
         <td>
             <a class="btn btn-primary" ui-sref="viewTechnician({id:technician._id})">View</a>
             <a class="btn btn-danger"  ng-click="deleteTechnician(technician)">Delete</a>

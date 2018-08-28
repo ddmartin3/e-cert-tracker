@@ -1,0 +1,14 @@
+<a ui-sref="newTechnician" class="btn-primary btn-lg nodecoration">Add New Technician</a>
+<table class="table techniciantable">
+    <tr>
+        <td><h3>All Licensed  Techs</h3></td>
+        <td></td>
+    </tr>
+    <tr ng-repeat="technician in technicians">
+        <td>{{technician.tech_name}}</td>
+        <td>
+            <a class="btn btn-primary" ui-sref="viewTechnician({id:technician._id})">View</a>
+            <a class="btn btn-danger"  ng-click="deleteTechnician(technician)">Delete</a>
+        </td>
+    </tr>
+</table>

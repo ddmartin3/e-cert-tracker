@@ -2,7 +2,7 @@
 
 var express = require('express'),
   bodyParser = require('body-parser'),
-  usersRouter = require('./routes/usersRouter.js'),
+  techniciansRouter = require('./routes/techniciansRouter.js'),
 
   app = express();
 
@@ -26,6 +26,6 @@ app.use(function (req, res, next) {
 });
 
 app.use(express.static('www'));
-app.use('/api', usersRouter);
+app.use('/api', techniciansRouter);
 
 module.exports = app;

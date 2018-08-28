@@ -1,51 +1,51 @@
 'use strict';
 
-angular.module('userApp.controllers', [])
-    .controller('UserListController', function(
-        $scope, $state, popupService, $window, User
+angular.module('techApp.controllers', [])
+    .controller('TechnicianListController', function(
+        $scope, $state, popupService, $window, Technician
     ) {
-        $scope.users = User.query();
+        $scope.technicians = Technician.query();
 
-        $scope.deleteUser = function(user) {
+        $scope.deleteTechnician = function(technician) {
             if (popupService.showPopup('Really delete this?')) {
-                user.$delete(function() {
+                technician.$delete(function() {
                     $window.location.href = '';
                 });
             }
         }
     })
-    .controller('UserViewController', function(
-        $scope, $stateParams, User
+    .controller('TechnicianViewController', function(
+        $scope, $stateParams, Technician
     ) {
-        $scope.user = User.get({
+        $scope.technician = Technician.get({
             id: $stateParams.id
         });
     })
-    .controller('UserCreateController', function(
-        $scope, $state, $stateParams, User
+    .controller('TechnicianCreateController', function(
+        $scope, $state, $stateParams, Technician
     ) {
-        $scope.user = new User();
+        $scope.technician = new Technician();
 
-        $scope.addUser = function() {
-            $scope.user.$save(function() {
-                $state.go('users');
+        $scope.addTechnician = function() {
+            $scope.technician.$save(function() {
+                $state.go('technicians');
             });
         }
     })
-    .controller('UserEditController', function(
-        $scope, $state, $stateParams, User
+    .controller('TechnicianEditController', function(
+        $scope, $state, $stateParams, Technician
     ) {
-        $scope.updateUser = function() {
-            $scope.user.$update(function() {
-                $state.go('users');
+        $scope.updateTechnician = function() {
+            $scope.technician.$update(function() {
+                $state.go('technicians');
             });
         };
 
-        $scope.loadUser = function() {
-            $scope.user = User.get({
+        $scope.loadTechnician = function() {
+            $scope.technician = Technician.get({
                 id: $stateParams.id
             });
         };
 
-        $scope.loadUser();
+        $scope.loadTechnician();
     });

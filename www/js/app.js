@@ -1,33 +1,33 @@
 'use strict';
 
 angular.module(
-  'userApp',
+  'techApp',
   [
     'ui.router',
     'ngResource',
-    'userApp.controllers',
-    'userApp.services'
+    'techApp.controllers',
+    'techApp.services'
   ]
 );
 
-angular.module('userApp').config(function($stateProvider, $httpProvider) {
-  $stateProvider.state('users', {
-    url: '/users',
-    templateUrl: 'templates/users.html',
-    controller: 'UserListController'
-  }).state('viewUser', {
-    url: '/users/:id/view',
-    templateUrl: 'templates/user-view.html',
-    controller: 'UserViewController'
-  }).state('newUser', {
-    url: '/users/new',
-    templateUrl: 'templates/user-add.html',
-    controller: 'UserCreateController'
-  }).state('editUser', {
-    url: '/users/:id/edit',
-    templateUrl: 'templates/user-edit.html',
-    controller: 'UserEditController'
+angular.module('techApp').config(function($stateProvider, $httpProvider) {
+  $stateProvider.state('technicians', {
+    url: '/technicians',
+    templateUrl: 'templates/technicians.html',
+    controller: 'TechnicianListController'
+  }).state('viewTechnician', {
+    url: '/technicians/:id/view',
+    templateUrl: 'templates/technician-view.html',
+    controller: 'TechnicianViewController'
+  }).state('newTechnician', {
+    url: '/technicians/new',
+    templateUrl: 'templates/technician-add.html',
+    controller: 'TechnicianCreateController'
+  }).state('editTechnician', {
+    url: '/technicians/:id/edit',
+    templateUrl: 'templates/technician-edit.html',
+    controller: 'TechnicianEditController'
   });
 }).run(function($state) {
-  $state.go('users');
+  $state.go('technicians');
 });

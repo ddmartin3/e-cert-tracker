@@ -1,0 +1,25 @@
+<table class="table techniciantable">
+    <tr>
+        <td><h3>Details for {{technician.tech_name}}</h3></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td>{{technician.tech_name}}</td>
+    </tr>
+    <tr>
+        <td>Expiration Date</td>
+        <td>{{technician.expire_date}}</td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td>{{technician.email}}</td>
+    </tr>
+    <tr>
+        <td>License  Number</td>
+        <td>{{technician.lic_number}}</td>
+    </tr>
+</table>
+<div>
+    <a class="btn btn-primary" ui-sref="editTechnician({id:technician._id})">Edit</a>
+</div>

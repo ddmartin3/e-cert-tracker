@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('techApp.services', []).factory('Technician', function($resource) {
-  return $resource('http://localhost:8000/api/technicians/:id', {
+  return $resource('https://agile-peak-59834.herokuapp.com/api/technicians/:id', {
     id: '@_id'
   }, {
     update: {
